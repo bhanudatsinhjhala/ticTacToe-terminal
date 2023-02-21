@@ -53,7 +53,7 @@ function createPlayer(playerNo) {
 }
 
 function addPlayerName(name, index) {
-    if (name) {
+    if (name !== players[0].name) {
         players[index - 1].name = name;
         console.log('\n player name added sucessfully \n');
         if (index === 1) {
@@ -63,7 +63,7 @@ function addPlayerName(name, index) {
             askToPlay(players[0]);
         }
     } else {
-        console.log("\n you can not leave player name empty");
+        console.log("\n you can not leave player name empty or duplicate name");
         createPlayer(index);
     }
 }
